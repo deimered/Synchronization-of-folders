@@ -1,7 +1,7 @@
 import os
 import filecmp
-import shutil
-import sys
+#import shutil
+#import sys
 
 concurrent_location = os.path.realpath(os.getcwd())
 
@@ -30,6 +30,8 @@ def synchronization(source, replica):
     # Files to eliminate and copy
     #
     # comparison.diff_files
+
+    #message
 
 
 def file_creation():
