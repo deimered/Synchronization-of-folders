@@ -47,4 +47,17 @@ def content_removal(content_path):
         os.remove(content_path)
 
 
-synchronization(source_path, replica_path)
+if len(sys.argv) == 5 and os.path.isdir(sys.argv[1]) and os.path.isdir(sys.argv[2]) and float(sys.argv[3]) > 0 and \
+        os.path.isdir(sys.argv[4]):
+    source_path = sys.argv[1]
+    replica_path = sys.argv[2] if not os.path.samefile(sys.argv[2], sys.argv[1]) else replica_path
+    synchronization_interval = float(sys.argv[3])
+    log_file_path = sys.argv[4] if not os.path.samefile(sys.argv[4], sys.argv[1]) and not \
+        os.path.samefile(sys.argv[4], sys.argv[2]) else concurrent_location
+
+print(source_path)
+print(replica_path)
+print(synchronization_interval)
+print(log_file_path)
+
+# synchronization(source_path, replica_path)
