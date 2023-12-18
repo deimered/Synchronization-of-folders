@@ -74,18 +74,22 @@ def log(text):
 
 
 # Verification that command line arguments are valid.
-if len(sys.argv) == 5 and os.path.isdir(sys.argv[1]) and os.path.isdir(sys.argv[2]) and float(sys.argv[3]) > 0 and \
-        os.path.isdir(sys.argv[4]):
-    source_path = sys.argv[1]
-    replica_path = sys.argv[2]
-    synchronization_interval = float(sys.argv[3])
-    log_file_path = sys.argv[4] + '\\' + 'log.txt'
+try:
+    if len(sys.argv) == 5 and os.path.isdir(sys.argv[1]) and os.path.isdir(sys.argv[2]) and float(sys.argv[3]) > 0 and \
+            os.path.isdir(sys.argv[4]):
+        source_path = sys.argv[1]
+        replica_path = sys.argv[2]
+        synchronization_interval = float(sys.argv[3])
+        log_file_path = sys.argv[4] + '\\' + 'log.txt'
+except ValueError:
+    pass
+
 
 # Displaying the current source and replica directories, synchronization interval, and log file location.
 print("Source: " + source_path)
 print("Replica: " + replica_path)
 print("Synchronization Interval: " + str(synchronization_interval))
-print("Log file: " + log_file_path + '\\' + 'log.txt')
+print("Log file: " + log_file_path)
 
 print("The synchronization is starting, you can stop this process by pressing CTRL + C.")
 
