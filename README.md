@@ -1,7 +1,7 @@
 # Synchronization-of-folders
 A program designed to synchronize two folders: the source and the replica.
 
-When executing the synchronization.py file, it will periodically synchronize the folders "sourceDirectory" and "replicaDirectory" every 1 second, logging the changes in the "log.txt" file.
+When executing the "synchronization.py" file, it will periodically synchronize the folders "sourceDirectory" and "replicaDirectory" every 1 second, logging the changes in the "log.txt" file.
 
 The source folder, replica folder, synchronization interval, and log file path can be defined using five command-line arguments. These arguments must be passed in the following order with these restrictions:
 
